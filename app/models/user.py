@@ -42,7 +42,7 @@ class Usuario(Base):
     __tablename__ = "tb_usuario"
 
     id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
-    pessoa_id: Mapped[int] = mapped_column(BigInteger, ForeignKey("tb_pessoa.id", onupdate="CASCADE", ondelete="RESTRICT"), nullable=False, unique=True)
+    id_pessoa: Mapped[int] = mapped_column(BigInteger, ForeignKey("tb_pessoa.id", onupdate="CASCADE", ondelete="RESTRICT"), nullable=False, unique=True)
 
     email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False, index=True)
     senha_hash: Mapped[str] = mapped_column(Text, nullable=False)
