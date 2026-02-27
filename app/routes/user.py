@@ -10,7 +10,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session, joinedload
 
 from app.database.connection import get_db
-from app.models import Pessoa, Usuario, TokenBlacklist
+from app.models.user import Pessoa, Usuario, TokenBlacklist
 from app.schemas.user import RegisterIn, RegisterOut
 from app.utils.password import hash_password, verify_password
 from app.utils.jwt_handler import criar_token, verificar_token, decode_token
