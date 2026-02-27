@@ -136,7 +136,7 @@ def login_user(payload: LoginInput, db: Session = Depends(get_db)):
         pessoa = db.execute(select(Pessoa).where(Pessoa.cpf == cpf)).scalar_one_or_none()
         if pessoa:
             user = db.execute(
-                select(Usuario).options(joinedload(Usuario.pessoa)).where(Usuario.pessoa_id == pessoa.id)
+                select(Usuario).options(joinedload(Usuario.pessoa)).where(Usuario.id_pessoa == pessoa.id)
             ).scalar_one_or_none()
 
     if not user or not verify_password(payload.senha, user.senha_hash):
