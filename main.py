@@ -21,10 +21,11 @@ app.add_middleware(
 )
 
 # Routers
-from app.routes.user import router as user_router  # ajuste o caminho se necessário
+from app.routes.user import router as user_router
+from app.routes.event import router as event_router
 
 app.include_router(user_router, prefix="/user", tags=["Usuário"])
-
+app.include_router(event_router, prefix="/event", tags=["Eventos"])
 
 @app.get("/")
 def root():
