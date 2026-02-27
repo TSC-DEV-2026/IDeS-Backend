@@ -13,7 +13,7 @@ class PessoaIn(BaseModel):
 
 class UsuarioIn(BaseModel):
     email: EmailStr
-    senha: str = Field(..., min_length=6, max_length=128)
+    senha: str = Field(..., min_length=6, max_length=72)
 
 
 class RegisterIn(BaseModel):
