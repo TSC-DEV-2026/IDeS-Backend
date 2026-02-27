@@ -104,7 +104,7 @@ def register(payload: RegisterIn, db: Session = Depends(get_db)):
     db.flush()
 
     usuario = Usuario(
-        pessoa_id=pessoa.id,
+        id_pessoa=pessoa.id,
         email=email,
         senha_hash=hash_password(payload.usuario.senha),
     )

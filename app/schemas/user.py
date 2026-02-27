@@ -35,7 +35,7 @@ class PessoaOut(BaseModel):
 class UsuarioOut(BaseModel):
     id: int
     email: str
-    pessoa_id: int
+    id_pessoa: int
 
     class Config:
         from_attributes = True
